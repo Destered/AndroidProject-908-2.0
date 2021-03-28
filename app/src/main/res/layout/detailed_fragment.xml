@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="vm"
+            type="com.dester.androidproject_908_20.presenter.detailed_info.DetailedInfoVM" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:background="@drawable/profile_background"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/background"
+            android:layout_width="match_parent"
+            android:src="@color/transparent_gray"
+            android:layout_height="match_parent"
+            tools:srcCompat="@color/transparent_gray" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fillViewport="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/avatar"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/detailed_avatar_height"
+                        app:isGone="@{vm.isCharacter}"
+                        tools:visibility="gone"
+                        app:loadFromUrl="@{vm.avatarUrl}"
+                        tools:srcCompat="@tools:sample/avatars" />
+
+                    <TextView
+                        android:id="@+id/name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/first_element_vertical_margin"
+                        android:layout_marginBottom="@dimen/base_vertical_margin"
+                        android:layout_marginHorizontal="@dimen/profile_margin_start"
+                        android:fontFamily="@font/profile_font"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/detailed_text_big"
+                        app:setName="@{vm.name}"
+                        tools:text="Name: Rick Sanchez" />
+
+                    <TextView
+                        android:id="@+id/status"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="@dimen/base_vertical_margin"
+                        tools:visibility="gone"
+                        android:layout_marginHorizontal="@dimen/profile_margin_start"
+                        android:fontFamily="@font/profile_font"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/detailed_text_big"
+                        app:isGone="@{vm.isCharacter}"
+                        app:setStatus="@{vm.status}"
+                        tools:text="Status: Alive" />
+
+                    <TextView
+                        android:id="@+id/species"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        tools:visibility="gone"
+                        android:layout_marginVertical="@dimen/base_vertical_margin"
+                        android:layout_marginHorizontal="@dimen/profile_margin_start"
+                        android:fontFamily="@font/profile_font"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/detailed_text_big"
+                        app:isGone="@{vm.isCharacter}"
+                        app:setSpecies="@{vm.species}"
+                        tools:text="Species: Human" />
+
+                    <TextView
+                        android:id="@+id/gender"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="@dimen/base_vertical_margin"
+                        tools:visibility="gone"
+                        android:layout_marginHorizontal="@dimen/profile_margin_start"
+                        android:fontFamily="@font/profile_font"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/detailed_text_big"
+                        app:isGone="@{vm.isCharacter}"
+                        app:setGender="@{vm.gender}"
+                        tools:text="Gender: Male" />
+
+                    <TextView
+                        android:id="@+id/origin"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="@dimen/base_vertical_margin"
+                        android:layout_marginHorizontal="@dimen/profile_margin_start"
+                        android:fontFamily="@font/profile_font"
+                        tools:visibility="gone"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/detailed_text_big"
+                        app:isGone="@{vm.isCharacter}"
+                        android:onClick="@{() -> vm.originClick()}"
+                        app:setOrigin="@{vm.origin}"
+                        tools:text="Origin: Earth" />
+
+                    <TextView
+                        android:id="@+id/location"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        tools:visibility="gone"
+                        android:layout_marginVertical="@dimen/base_vertical_margin"
+                        android:layout_marginHorizontal="@dimen/profile_margin_start"
+                        android:fontFamily="@font/profile_font"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/detailed_text_big"
+                        app:isGone="@{vm.isCharacter}"
+                        android:onClick="@{() -> vm.originClick()}"
+                        app:setLocation="@{vm.lastKnownLocation}"
+                        tools:text="Location: Earth" />
+
+                    <TextView
+                        android:id="@+id/type"
+                        tools:visibility="gone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="@dimen/base_vertical_margin"
+                        android:layout_marginHorizontal="@dimen/profile_margin_start"
+                        android:fontFamily="@font/profile_font"
+                        android:textColor="@color/white"
+                        app:isGone="@{vm.isLocation}"
+                        android:textSize="@dimen/detailed_text_big"
+                        app:setType="@{vm.type}"
+                        tools:text="Type" />
+
+                    <TextView
+                        android:id="@+id/dimension"
+                        tools:visibility="gone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="@dimen/base_vertical_margin"
+                        android:layout_marginHorizontal="@dimen/profile_margin_start"
+                        android:fontFamily="@font/profile_font"
+                        android:textColor="@color/white"
+                        app:isGone="@{vm.isLocation}"
+                        android:textSize="@dimen/detailed_text_big"
+                        app:setDimension="@{vm.dimension}"
+                        tools:text="Dimension" />
+
+                    <TextView
+                        android:id="@+id/episode"
+                        tools:visibility="gone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="@dimen/base_vertical_margin"
+                        android:layout_marginHorizontal="@dimen/profile_margin_start"
+                        android:fontFamily="@font/profile_font"
+                        android:textColor="@color/white"
+                        app:isGone="@{vm.isEpisode}"
+                        android:textSize="@dimen/detailed_text_big"
+                        app:setEpisode="@{vm.episode}"
+                        tools:text="Dimension" />
+
+                    <TextView
+                        android:id="@+id/air_date"
+                        tools:visibility="gone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="@dimen/base_vertical_margin"
+                        android:layout_marginHorizontal="@dimen/profile_margin_start"
+                        android:fontFamily="@font/profile_font"
+                        android:textColor="@color/white"
+                        app:isGone="@{vm.isEpisode}"
+                        android:textSize="@dimen/detailed_text_big"
+                        app:setAirDate="@{vm.airDate}"
+                        tools:text="Dimension" />
+                </LinearLayout>
+            </androidx.core.widget.NestedScrollView>
+        </LinearLayout>
+
+    </FrameLayout>
+</layout>

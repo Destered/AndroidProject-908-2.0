@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="categoryTitle"
+            type="String" />
+        <variable
+            name="categoryBackground"
+            type="android.graphics.drawable.Drawable" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/cardview_category_height"
+        app:cardCornerRadius="@dimen/cardview_corner"
+        tools:backgroundTint="@color/default_background">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:src="@{categoryBackground}"
+            android:scaleType="centerCrop"
+            android:layout_height="match_parent"
+            tools:srcCompat="@tools:sample/avatars" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/app_font"
+            android:textSize="@dimen/category_text_size"
+            android:textColor="@color/white"
+            android:paddingHorizontal="@dimen/category_text_padding_horizontal"
+            android:paddingVertical="@dimen/category_text_padding_vertical"
+            android:background="@drawable/button_background"
+            android:layout_height="wrap_content"
+            android:text="@{categoryTitle}"
+            android:textStyle="bold"
+            tools:text="Test Name"/>
+    </androidx.cardview.widget.CardView>
+</layout>

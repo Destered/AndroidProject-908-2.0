@@ -1,0 +1,2 @@
+include ':app'
+rootProject.name = "AndroidProject-908-2.0"
