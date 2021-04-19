@@ -36,6 +36,9 @@
         <argument
             android:name="item_request"
             app:argType="com.dester.androidproject_908_20.data.api.CategoryRequest" />
+        <action
+            android:id="@+id/action_detailedInfoFragment_self"
+            app:destination="@id/detailedInfoFragment" />
     </fragment>
     <fragment
         android:id="@+id/filterFragment"

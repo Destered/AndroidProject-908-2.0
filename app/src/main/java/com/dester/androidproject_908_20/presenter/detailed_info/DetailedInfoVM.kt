@@ -5,13 +5,16 @@ import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.MutableLiveData
 import com.dester.androidproject_908_20.data.api.ApiFactory
 import com.dester.androidproject_908_20.data.api.CategoryRequest
+import com.dester.androidproject_908_20.domain.util.getIdFromUrl
 import com.dester.androidproject_908_20.presenter.base.BaseViewModel
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 
 class DetailedInfoVM(
     val request:CategoryRequest,
-    val owner: LifecycleOwner
+    val owner: LifecycleOwner,
+    val openLocation:(Int)->Unit,
+    val openCharacter:(Int)->Unit,
 ):BaseViewModel() {
 
     val avatarUrl = MutableLiveData(String())
@@ -124,6 +127,17 @@ class DetailedInfoVM(
 
     fun originClick(){
 
+        originUrl.value?.let {
+            Log.d("destErr: ","${it}")
+            if(it != "unknown" && it != "") openLocation.invoke(getIdFromUrl(it))
+            else return }
+    }
+
+    fun locationClick(){
+        lastKnownLocationUrl.value?.let {
+            Log.d("destErr: ","${it}")
+            if(it != "unknown" && it != "") openLocation.invoke(getIdFromUrl(it))
+            else return }
     }
 
 }

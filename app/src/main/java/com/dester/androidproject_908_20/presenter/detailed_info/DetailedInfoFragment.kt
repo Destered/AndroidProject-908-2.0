@@ -27,8 +27,22 @@ class DetailedInfoFragment : BaseFragment<DetailedInfoVM>() {
             1
         )
         Log.d("dester/", "getRequest: ${request.requestType}")
-        viewModel = DetailedInfoVM(request, this)
+        viewModel = DetailedInfoVM(request, this,{id -> openLocation(id)},{id -> openCharacter(id)})
         Log.d("dester/", "SetVM")
+    }
+
+    private fun openLocation(id: Int) {
+        val action = DetailedInfoFragmentDirections.actionDetailedInfoFragmentSelf(
+            CategoryRequest("location",null,id)
+        )
+        navigationController.navigate(action)
+    }
+
+    private fun openCharacter(id:Int){
+        val action = DetailedInfoFragmentDirections.actionDetailedInfoFragmentSelf(
+            CategoryRequest("character",null,id)
+        )
+        navigationController.navigate(action)
     }
 
     override fun onCreateView(
