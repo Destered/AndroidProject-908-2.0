@@ -2,15 +2,18 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/fragment_main"
+        android:id="@+id/navigation_main"
+        android:name="FragmentMain"
         android:icon="@android:drawable/ic_dialog_info"
         android:title="Main"/>
     <item
-        android:id="@+id/fragment_profile"
+        android:id="@+id/navigation_profile"
+        android:name="FragmentProfile"
         android:icon="@android:drawable/ic_menu_my_calendar"
         android:title="Profile" />
     <item
-        android:id="@+id/fragment_settings"
+        android:id="@+id/navigation_settings"
+        android:name="FragmentSettings"
         android:icon="@android:drawable/ic_menu_manage"
         android:title="Settings" />
 </menu>

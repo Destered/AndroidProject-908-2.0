@@ -5,6 +5,8 @@ import androidx.annotation.IdRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.dester.androidproject_908_20.R
 import com.dester.androidproject_908_20.databinding.ActivityMainBinding
@@ -12,7 +14,7 @@ import com.dester.androidproject_908_20.presenter.data.UserInfo
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.rbddevs.splashy.Splashy
 
-class MainActivity: AppCompatActivity(R.layout.activity_main) {
+class MainActivity: AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     lateinit var userData: UserInfo
 
