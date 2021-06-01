@@ -1,16 +1,4 @@
 <resources>
-    <string name="app_name">RickAndMortyApp</string>
-    <string name="character_category_title">Character</string>
-    <string name="location_category_title">Location</string>
-    <string name="episode_category_title">Episode</string>
-    <string name="name">"Name: "</string>
-    <string name="status">"Status: "</string>
-    <string name="species">"Species: "</string>
-    <string name="gender">"Gender: "</string>
-    <string name="origin">"Origin: "</string>
-    <string name="location">"Last Seen: "</string>
-    <string name="type">"Type: "</string>
-    <string name="dimension">"Dimension: "</string>
-    <string name="episode">"Episode: "</string>
-    <string name="airDate">"Air Date: "</string>
+    <string name="app_name">PPAP</string>
+
 </resources>

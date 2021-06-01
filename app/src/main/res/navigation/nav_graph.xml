@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/login_navigation"
+    app:startDestination="@id/LoginFragment">
+
+    <fragment
+        android:id="@+id/LoginFragment"
+        android:name="com.dester.androidproject_908_20.presenter.login.LoginFragment"
+        tools:layout="@layout/fragment_login"
+        android:label="LoginFragment" >
+
+        <action
+            android:id="@+id/action_LoginFragment_to_registrationFragment"
+            app:popUpTo="@id/LoginFragment"
+            app:destination="@id/registrationFragment" />
+        <action
+            android:id="@+id/action_LoginFragment_to_mainActivity"
+            app:destination="@id/mainActivity" />
+    </fragment>
+    <fragment
+        android:id="@+id/registrationFragment"
+        android:name="com.dester.androidproject_908_20.presenter.registration.RegistrationFragment"
+        android:label="RegistrationFragment" >
+        <action
+            android:id="@+id/action_registrationFragment_to_LoginFragment"
+            app:popUpTo="@id/registrationFragment"
+            app:destination="@id/LoginFragment" />
+        <action
+            android:id="@+id/action_registrationFragment_to_mainActivity"
+            app:destination="@id/mainActivity" />
+    </fragment>
+    <activity
+        android:id="@+id/mainActivity"
+        android:name="com.dester.androidproject_908_20.presenter.MainActivity"
+        android:label="MainActivity" >
+        <argument
+            android:name="userData"
+            app:argType="com.dester.androidproject_908_20.presenter.data.UserInfo" />
+    </activity>
+
+</navigation>

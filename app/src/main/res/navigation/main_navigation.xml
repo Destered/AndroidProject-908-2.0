@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/fragment_main">
+
+    <fragment
+        android:id="@+id/fragment_main"
+        android:name="com.dester.androidproject_908_20.presenter.main.MainFragment"
+        android:label="MainFragment" >
+    </fragment>
+    <fragment
+        android:id="@+id/fragment_profile"
+        android:name="com.dester.androidproject_908_20.presenter.profile.ProfileFragment"
+        android:label="ProfileFragment" />
+    <fragment
+        android:id="@+id/fragment_settings"
+        android:name="com.dester.androidproject_908_20.presenter.settings.SettingsFragment"
+        android:label="SettingsFragment" />
+</navigation>

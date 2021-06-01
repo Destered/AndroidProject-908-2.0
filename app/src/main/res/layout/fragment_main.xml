@@ -1,69 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:tools="http://schemas.android.com/tools"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="vm"
+            type="com.dester.androidproject_908_20.presenter.main.MainVM" />
+    </data>
 
-    <FrameLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@drawable/default_background"
-            android:orientation="vertical">
+        <TextView
+            android:id="@+id/usernameText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="32dp"
+            android:text="@{vm.username}"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/title"
+            tools:text="Username" />
 
-            <include
-                android:id="@+id/characters_card"
-                layout="@layout/category_card"
-                android:layout_width="match_parent"
-                android:layout_height="0px"
-                android:layout_marginHorizontal="@dimen/card_margin_horizontal"
-                android:layout_marginVertical="@dimen/card_margin_vertical"
-                android:layout_weight="1"
-                app:categoryBackground="@{@drawable/characters_background}"
-                app:categoryTitle="@{@string/character_category_title}" />
+        <TextView
+            android:id="@+id/passwordText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@{vm.password}"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            tools:text="Password"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/usernameText" />
 
-            <include
-                android:id="@+id/locations_card"
-                layout="@layout/category_card"
-                android:layout_width="match_parent"
-                android:layout_height="0px"
-                android:layout_marginHorizontal="@dimen/card_margin_horizontal"
-                android:layout_marginVertical="@dimen/card_margin_vertical"
-                android:layout_weight="1"
-                app:categoryBackground="@{@drawable/locations_background}"
-                app:categoryTitle="@{@string/location_category_title}" />
-
-            <include
-                android:id="@+id/episodes_card"
-                layout="@layout/category_card"
-                android:layout_width="match_parent"
-                android:layout_height="0px"
-                android:layout_marginHorizontal="@dimen/card_margin_horizontal"
-                android:layout_marginVertical="@dimen/card_margin_vertical"
-                android:layout_weight="1"
-                app:categoryBackground="@{@drawable/episodes_background}"
-                app:categoryTitle="@{@string/episode_category_title}" />
-
-        </LinearLayout>
-
-        <ImageView
-            android:id="@+id/imageView3"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:isVisible="@{vm.loadingVisibility}"
-            android:scaleType="fitXY"
-            tools:srcCompat="@tools:sample/avatars" />
-    </FrameLayout>
-
-
-    <data>
-
-        <variable
-            name="vm"
-            type="com.dester.androidproject_908_20.presenter.main.MainScreenVM" />
-    </data>
-
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Main Page"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
